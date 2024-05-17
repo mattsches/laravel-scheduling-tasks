@@ -36,7 +36,7 @@ class SchedulingTasksTest extends TestCase
         return $this->instance($abstract, Mockery::mock(...array_filter(func_get_args())));
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_skips_loading_excludes()
     {
         $app = $this->mockApp();
@@ -51,7 +51,7 @@ class SchedulingTasksTest extends TestCase
         (new TaskLoader($app))->loadFor($schedule, [BackupDaily::class]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function it_invokes_a_found_task()
     {
         $app = $this->mockApp();
